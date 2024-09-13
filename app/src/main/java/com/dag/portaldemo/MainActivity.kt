@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.dag.portaldemo.features.wallet.create.CreateWallet
+import com.dag.portaldemo.navigation.NavGraph
 import com.dag.portaldemo.ui.theme.PortalDemoTheme
 import io.portalhq.android.Portal
 
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    CreateWallet()
+                    NavGraph()
                 }
             }
         }

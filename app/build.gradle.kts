@@ -77,5 +77,6 @@ dependencies {
     implementation("io.insert-koin:koin-core")
     implementation("io.insert-koin:koin-android:4.0.0-RC2")
     implementation("io.insert-koin:koin-androidx-compose:4.0.0-RC2")
+    implementation("androidx.navigation:navigation-compose:2.8.0")
 
 }

@@ -1,6 +1,7 @@
 package com.dag.portaldemo.di
 
 import com.dag.portaldemo.BuildConfig
+import com.dag.portaldemo.features.wallet.backup.BackupVM
 import com.dag.portaldemo.features.wallet.create.CreateWalletVM
 import io.portalhq.android.Portal
 import org.koin.core.module.dsl.viewModel
@@ -29,4 +30,5 @@ val appModule = module {
 
 val viewModelModule = module {
     viewModel { CreateWalletVM(get()) }
+    viewModel { BackupVM(get()) }
 }
