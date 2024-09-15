@@ -1,8 +1,13 @@
 package com.dag.portaldemo.di
 
 import com.dag.portaldemo.BuildConfig
+import com.dag.portaldemo.features.transaction.sign.SignTransaction
+import com.dag.portaldemo.features.transaction.sign.SignTransactionVM
+import com.dag.portaldemo.features.transaction.simulate.SimulateTransaction
+import com.dag.portaldemo.features.transaction.simulate.SimulateTransactionVM
 import com.dag.portaldemo.features.wallet.backup.BackupVM
 import com.dag.portaldemo.features.wallet.create.CreateWalletVM
+import com.dag.portaldemo.features.wallet.recover.RecoverVM
 import io.portalhq.android.Portal
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
@@ -31,4 +36,8 @@ val appModule = module {
 val viewModelModule = module {
     viewModel { CreateWalletVM(get()) }
     viewModel { BackupVM(get()) }
+    viewModel { SignTransactionVM(get()) }
+    viewModel { SimulateTransactionVM(get()) }
+    viewModel { RecoverVM(get()) }
+
 }

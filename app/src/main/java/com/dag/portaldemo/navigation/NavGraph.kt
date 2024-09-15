@@ -13,8 +13,11 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.dag.portaldemo.components.appbar.CustomAppbar
 import com.dag.portaldemo.features.entry.EntryScreen
+import com.dag.portaldemo.features.transaction.sign.SignTransaction
+import com.dag.portaldemo.features.transaction.simulate.SimulateTransaction
 import com.dag.portaldemo.features.wallet.backup.Backup
 import com.dag.portaldemo.features.wallet.create.CreateWallet
+import com.dag.portaldemo.features.wallet.recover.Recover
 
 @Composable
 fun NavGraph(
@@ -42,6 +45,15 @@ fun NavGraph(
                 }
                 composable(NavScreen.BackupWallet.route) {
                     Backup()
+                }
+                composable(NavScreen.SignTransaction.route) {
+                    SignTransaction()
+                }
+                composable(NavScreen.SimulateTransaction.route) {
+                    SimulateTransaction()
+                }
+                composable(NavScreen.RecoverScreen.route) {
+                    Recover()
                 }
             }
         }
