@@ -13,7 +13,7 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun Backup(
     backupVM: BackupVM = koinViewModel()
-){
+) {
     val state = backupVM.viewState.collectAsState()
     CommonView(button = {
         TextButton(onClick = {
@@ -22,12 +22,12 @@ fun Backup(
             Text("Backup Wallet")
         }
     }) {
-        AddressBox(label = "CipherText", value = state.value)
+        state.value?.let { AddressBox(label = "CipherText", value = it) }
     }
 }
 
 @Composable
 @Preview
-fun BackupPreview(){
+fun BackupPreview() {
     Backup()
 }

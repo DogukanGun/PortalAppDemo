@@ -33,8 +33,8 @@ fun CreateWallet(
             Text("Create Wallet")
         }
     }) {
-        AddressBox(label = "Ethereum", value = state.value.ethereumAddress)
-        AddressBox(label = "Solana", value = state.value.solanaAddresss)
+        state.value?.let { AddressBox(label = "Ethereum", value = it.ethereumAddress) }
+        state.value?.let { AddressBox(label = "Solana", value = it.solanaAddresss) }
 
     }
 }

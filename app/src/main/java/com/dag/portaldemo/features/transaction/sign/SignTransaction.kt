@@ -1,7 +1,6 @@
 package com.dag.portaldemo.features.transaction.sign
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -42,7 +41,7 @@ fun SignTransaction(
                 Text(text = "From Address")
             },
             onValueChange = {
-            fromAddress.value = it
+                fromAddress.value = it
             }
         )
         TextField(
@@ -51,7 +50,7 @@ fun SignTransaction(
                 Text(text = "To Address")
             },
             onValueChange = {
-            toAddress.value = it
+                toAddress.value = it
             }
         )
         TextField(

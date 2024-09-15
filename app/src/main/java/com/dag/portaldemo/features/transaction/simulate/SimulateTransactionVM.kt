@@ -1,22 +1,13 @@
 package com.dag.portaldemo.features.transaction.simulate
 
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.dag.portaldemo.BaseVM
 import io.portalhq.android.Portal
 import io.portalhq.android.api.data.EvaluateTransactionOperationType
 import io.portalhq.android.api.data.EvaluateTransactionParam
-import io.portalhq.android.storage.mobile.PortalNamespace
-import io.portalhq.android.utils.PortalSolana
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class SimulateTransactionVM(private val portal: Portal) : ViewModel() {
-
-    private var _viewState: MutableStateFlow<Result<String>?> =
-        MutableStateFlow(null)
-    val viewState: StateFlow<Result<String>?> = _viewState.asStateFlow()
+class SimulateTransactionVM(private val portal: Portal) : BaseVM<Result<String>>() {
 
     fun simulate(
         to: String,

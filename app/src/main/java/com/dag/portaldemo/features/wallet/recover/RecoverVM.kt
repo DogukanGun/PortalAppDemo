@@ -3,6 +3,7 @@ package com.dag.portaldemo.features.wallet.recover
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.dag.portaldemo.BaseVM
 import io.portalhq.android.Portal
 import io.portalhq.android.mpc.data.BackupConfigs
 import io.portalhq.android.mpc.data.BackupMethods
@@ -13,11 +14,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class RecoverVM(private val portal: Portal) : ViewModel() {
-
-    private var _viewState: MutableStateFlow<String> =
-        MutableStateFlow("")
-    val viewState: StateFlow<String> = _viewState.asStateFlow()
+class RecoverVM(private val portal: Portal) : BaseVM<String>() {
 
     fun recover(password: String?, type: BackupMethods) {
         viewModelScope.launch {

@@ -1,8 +1,8 @@
 package com.dag.portaldemo.features.transaction.sign
 
 import android.util.Log
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.dag.portaldemo.BaseVM
 import com.google.gson.Gson
 import com.solana.core.PublicKey
 import com.solana.core.Transaction
@@ -16,17 +16,10 @@ import io.portalhq.android.utils.PortalSolanaHeader
 import io.portalhq.android.utils.PortalSolanaInstruction
 import io.portalhq.android.utils.PortalSolanaMessage
 import io.portalhq.android.utils.PortalSolanaRequest
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import java.math.BigInteger
 
-class SignTransactionVM(private val portal: Portal) : ViewModel() {
-
-    private var _viewState: MutableStateFlow<String> =
-        MutableStateFlow("")
-    val viewState: StateFlow<String> = _viewState.asStateFlow()
+class SignTransactionVM(private val portal: Portal) : BaseVM<String>() {
 
     private fun prepareSolanaRequest(
         fromAddress: String,

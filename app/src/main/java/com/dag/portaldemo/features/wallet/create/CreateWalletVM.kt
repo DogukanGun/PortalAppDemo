@@ -7,17 +7,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.dag.portaldemo.BaseVM
 import io.portalhq.android.Portal
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class CreateWalletVM(private val portal: Portal) : ViewModel() {
-
-    private var _viewState: MutableStateFlow<CreateWalletVS> =
-        MutableStateFlow(CreateWalletVS())
-    val viewState: StateFlow<CreateWalletVS> = _viewState.asStateFlow()
+class CreateWalletVM(private val portal: Portal) : BaseVM<CreateWalletVS>() {
 
     fun createWallet() {
         viewModelScope.launch {
@@ -32,7 +29,7 @@ class CreateWalletVM(private val portal: Portal) : ViewModel() {
             }
             if (walletAddress.isSuccess) {
                 val response = walletAddress.getOrThrow()
-                _viewState.value = _viewState.value.copy(
+                _viewState.value = _viewState.value?.copy(
                     ethereumAddress = response.ethereumAddress,
                     solanaAddresss = response.solanaAddress
                 )

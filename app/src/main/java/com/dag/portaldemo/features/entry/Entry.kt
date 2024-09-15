@@ -26,6 +26,11 @@ fun EntryScreen(
                 header = "Transaction", rows = NavScreen.transactions.map {
                     AccordionModel.Row(it.route, it.toString())
                 }
+            ),
+            AccordionModel(
+                header = "External", rows = NavScreen.external.map {
+                    AccordionModel.Row(it.route, it.toString())
+                }
             )
         ).forEach {
             Accordion(model = it) { route ->

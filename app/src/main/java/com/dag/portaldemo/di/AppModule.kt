@@ -1,6 +1,8 @@
 package com.dag.portaldemo.di
 
+import com.dag.portaldemo.BaseVM
 import com.dag.portaldemo.BuildConfig
+import com.dag.portaldemo.features.external.api.ApiVM
 import com.dag.portaldemo.features.transaction.sign.SignTransaction
 import com.dag.portaldemo.features.transaction.sign.SignTransactionVM
 import com.dag.portaldemo.features.transaction.simulate.SimulateTransaction
@@ -39,5 +41,6 @@ val viewModelModule = module {
     viewModel { SignTransactionVM(get()) }
     viewModel { SimulateTransactionVM(get()) }
     viewModel { RecoverVM(get()) }
+    viewModel { ApiVM(get()) }
 
 }
