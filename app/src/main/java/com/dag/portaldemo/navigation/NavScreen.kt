@@ -10,10 +10,11 @@ sealed class NavScreen(val route: String) {
     data object SimulateTransaction : NavScreen("simulate_transaction")
     data object RecoverScreen : NavScreen("recover_screen")
     data object ApiScreen: NavScreen("api_screen")
+    data object WebView: NavScreen("webview_screen")
 
     companion object {
         val wallets = listOf(CreateWallet, BackupWallet, RecoverScreen)
         val transactions = listOf(SignTransaction, SimulateTransaction)
-        val external = listOf(ApiScreen)
+        val external = listOf(ApiScreen,WebView)
     }
 }

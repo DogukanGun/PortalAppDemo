@@ -14,6 +14,7 @@ import androidx.navigation.compose.rememberNavController
 import com.dag.portaldemo.components.appbar.CustomAppbar
 import com.dag.portaldemo.features.entry.EntryScreen
 import com.dag.portaldemo.features.external.api.ApiView
+import com.dag.portaldemo.features.external.webview.WebView
 import com.dag.portaldemo.features.transaction.sign.SignTransaction
 import com.dag.portaldemo.features.transaction.simulate.SimulateTransaction
 import com.dag.portaldemo.features.wallet.backup.Backup
@@ -58,6 +59,9 @@ fun NavGraph(
                 }
                 composable(NavScreen.ApiScreen.route) {
                     ApiView()
+                }
+                composable(NavScreen.WebView.route) {
+                    WebView()
                 }
             }
         }
