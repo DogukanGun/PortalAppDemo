@@ -32,7 +32,12 @@ fun SignTransaction(
                 lamport.value.toLong()
             )
         }) {
-            Text(text = "Sign Transaction")
+            Text(text = "Sign Transaction with Solana")
+        }
+        TextButton(onClick = {
+            signTransactionVM.signTransactionEthereum()
+        }) {
+            Text(text = "Sign Transaction with Ethereum")
         }
     }) {
         TextField(

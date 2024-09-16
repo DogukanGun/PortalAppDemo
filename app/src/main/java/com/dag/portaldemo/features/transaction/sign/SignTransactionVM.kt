@@ -116,11 +116,11 @@ class SignTransactionVM(private val portal: Portal) : BaseVM<String>() {
                 //Ethereum is not working
                 val params = listOf(
                     TransactionParams(
-                        "",
-                        "0x9AeCB4DA6b438830b88C5F40b6Bf36EF3073B350",
+                        "0x6097f22127E2EF98C2cF31335Bede16D742f6890",
+                        "0xF952181fE3466D1C1b58160295772eCEe40a36c0",
                         "0x${BigInteger("1").toString(16)}",
                         "0x6000",
-                        portal.getAddress(PortalNamespace.SOLANA)
+                        portal.getAddress(PortalNamespace.EIP155)
                     )
                 )
 
